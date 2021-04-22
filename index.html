@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="./styles/index.css">
     <title>Форма заказа</title>
+    <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
 </head>
 
 <body>
@@ -33,11 +34,29 @@
                 <button class="form-sender__plus-button"></button>
 
                 <p class="form-sender__title">Примечание:</p>
-                <textarea type="textarea" style="width: 230px; height: 230px; margin-top: -20px;" placeholder="Введите текст..." value=" " name="primechanie"></textarea>
+                <textarea type="textarea" style="width: 234px; height: 230px; margin-top: -20px;" placeholder="Введите текст..." value=" " name="primechanie"></textarea>
                 <button type='submit' class="form-sender__button">Отправить</button>
             </form>
         </main>
+        <footer></footer>
     </div>
+    <script>
+        $('.form-sender__switch_type_btn').click(function() {
+            $(this).toggleClass('form-sender__switch_type_on');
+            if ($(this).hasClass('form-sender__switch_type_on')) {
+                $(this).trigger('on.switch');
+            } else {
+                $(this).trigger('off.switch');
+            }
+        });
+
+        $('.form-sender__switch_type_btn').on('on.switch', function() {
+            console.log('Кнопка переключена в состояние on');
+        });
+        $('.form-sender__switch_type_btn').on('off.switch', function() {
+            console.log('Кнопка переключена в состояние off');
+        });
+    </script>
     <script src="./scripts/index.js"></script>
 </body>
 
