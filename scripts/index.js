@@ -1,11 +1,13 @@
 let page = document.querySelector('.page');
 let main = document.querySelector('.main');
 let formSender = main.querySelector('.form-sender');
+let post = main.querySelector('.post');
 let formInput = formSender.querySelectorAll('.form-sender__input');
 
-let formButton = formSender.querySelector('.form-sender__button');
+let formButton = post.querySelector('.form-sender__button');
 
-let plusButton = formSender.querySelectorAll('.form-sender__plus-button');
+let plusButton = post.querySelectorAll('.form-sender__plus-button');
+
 
 
 function plus() {
@@ -20,7 +22,7 @@ function plus() {
     <p class="form-sender__title">Примечание:</p>`);
 };
 
-formSender.addEventListener('click', plus);
+post.addEventListener('click', plus);
 
 function saveButton(evt) {
     evt.preventDefault();
@@ -43,4 +45,24 @@ function saveButton(evt) {
 }
 
 
-formSender.addEventListener('submit', saveButton);
+post.addEventListener('submit', saveButton);
+
+
+$(document).on("click", ".form-sender__switch_type_btn", function() {
+
+    $(this).toggleClass('form-sender__switch_type_on');
+    if ($(this).hasClass('form-sender__switch_type_on')) {
+        $(this).trigger('on.switch');
+    } else {
+        $(this).trigger('off.switch');
+    }
+});
+
+$(document)
+
+$(document).on('on.switch', function() {
+    console.log('Кнопка переключена в состояние on');
+});
+$(document).on('off.switch', function() {
+    console.log('Кнопка переключена в состояние off');
+});
