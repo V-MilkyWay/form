@@ -8,12 +8,12 @@
     background-position: center;
     background-size: 46px auto;
     background-color: #ffffff;
-    width: 234px;
+    width: 100%;
     height: 42px;
     border: 2px solid #000000;
     border-radius: 2px;
-    margin-top: -20px;
-    margin-bottom: -10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .form-sender__plus-button:hover {

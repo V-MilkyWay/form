@@ -17,8 +17,7 @@ function plus() {
     <input class="form-sender__input" type="text" name="DEEP" placeholder="4321см" value="">
     <p class="form-sender__title">Наличие дна:</p>
     <div class="form-sender__switch_type_btn form-sender__switch_type_on"></div>
-    <p class="form-sender__title">Примечание:</p>
-    <textarea type="textarea" style="width: 234px; height: 230px; margin-top: -20px;" placeholder="Введите текст..." value=" " name="primechanie"></textarea>`);
+    <p class="form-sender__title">Примечание:</p>`);
 };
 
 formSender.addEventListener('click', plus);
