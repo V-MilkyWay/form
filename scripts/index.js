@@ -60,11 +60,11 @@ $(document).on("click", ".form-sender__button", function() {
 
     alert(`
     Заказ №: ${i}
-    Контактный телефон: ${out.value}
-    Название фирмы: ${out2.value}
+    ФИО: ${out.value}
+    Контактный телефон: ${out2.value}
+    Название фирмы: ${out3.value}
 
     ---Информация о заказе---
-    Объект: ${out3.value}
     Ширина: ${out4.value}
     Глубина: ${out5.value}
     Наличие дна: ${out6}`);
