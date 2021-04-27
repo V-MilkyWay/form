@@ -9,13 +9,13 @@ let formButton = post.querySelector('.form-sender__button');
 let plusButton = post.querySelectorAll('.form-sender__plus-button');
 
 
-
+let i = 1;
 
 $(document).on("click", ".form-sender__plus-button", function() {
-    let i = 0;
+    i = i + 1;
 
     formSender.insertAdjacentHTML('beforeend', `
-    <p class="form-sender__title">${i}</p>
+    <h2 class="form-sender__title" style="text-align: center; margin-bottom: -40px; text-decoration: underline;">Заказ №:${i}</h2>
     <p class="form-sender__title" style="padding-top: 10px; border-top: 1px dotted green>Объект:</p>
     <input class="form-sender__input" type="text" name="OBJECT" placeholder="Колодец" value="">
     <p class="form-sender__title">Ширина:</p>
@@ -34,6 +34,7 @@ $(document).on("click", ".form-sender__button", function() {
     out4 = formInput[3];
     out5 = formInput[4];
     out6 = formInput[5];
+
 
     alert(`
     Заказ: 1
