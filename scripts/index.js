@@ -66,6 +66,6 @@ $(document).on("click", ".form-sender__button", function() {
     ---Информация о заказе---
     Объект: ${out3.value}
     Ширина: ${out4.value}
-    Глубина:${out5.value}
-    Наличие дна:${out6}`);
+    Глубина: ${out5.value}
+    Наличие дна: ${out6}`);
 });
