@@ -10,22 +10,24 @@ let plusButton = post.querySelectorAll('.form-sender__plus-button');
 
 
 
-function plus() {
-    formSender.insertAdjacentHTML('beforeend', `<p class="form-sender__title" style="padding-top: 10px; border-top: 1px dotted green>Объект:</p>
+
+$(document).on("click", ".form-sender__plus-button", function() {
+    let i = 0;
+
+    formSender.insertAdjacentHTML('beforeend', `
+    <p class="form-sender__title">${i}</p>
+    <p class="form-sender__title" style="padding-top: 10px; border-top: 1px dotted green>Объект:</p>
     <input class="form-sender__input" type="text" name="OBJECT" placeholder="Колодец" value="">
     <p class="form-sender__title">Ширина:</p>
     <input class="form-sender__input" type="text" name="WIDTH" placeholder="1000см" value="">
     <p class="form-sender__title">Глубина:</p>
     <input class="form-sender__input" type="text" name="DEEP" placeholder="4321см" value="">
     <p class="form-sender__title">Наличие дна:</p>
-    <div class="form-sender__switch_type_btn form-sender__switch_type_on"></div>
-    <p class="form-sender__title">Примечание:</p>`);
-};
+    <div class="form-sender__switch_type_btn form-sender__switch_type_on"></div>`);
+});
 
-post.addEventListener('click', plus);
 
-function saveButton(evt) {
-    evt.preventDefault();
+$(document).on("click", ".form-sender__button", function() {
     let out = formInput[0];
     out2 = formInput[1];
     out3 = formInput[2];
@@ -34,18 +36,16 @@ function saveButton(evt) {
     out6 = formInput[5];
 
     alert(`
-    Заказ: ${out.value}
-    Контактный телефон: ${out2.value}
-    Название фирмы: ${out3.value}
+    Заказ: 1
+    Контактный телефон: ${out.value}
+    Название фирмы: ${out2.value}
 
     ---Информация о заказе---
-    Объект: ${out4.value}
-    Ширина: ${out5.value}
-    Глубина:${out6.value}`);
-}
+    Объект: ${out3.value}
+    Ширина: ${out4.value}
+    Глубина:${out5.value}`);
+});
 
-
-post.addEventListener('submit', saveButton);
 
 
 $(document).on("click", ".form-sender__switch_type_btn", function() {
