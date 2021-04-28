@@ -38,7 +38,7 @@ $(document).on("click", ".form-sender__plus-button", function() {
     i = i + 1;
 
     formSender.insertAdjacentHTML('beforeend', `
-    <h2 class="form-sender__title" style="text-align: center; margin-bottom: -40px; text-decoration: underline;">Заказ №:${i}</h2>
+    <h2 class="form-sender__title" style="text-align: center; margin-bottom: -40px; text-decoration: underline;">Колодец №:${i}</h2>
     <p class="form-sender__title" style="padding-top: 10px; border-top: 1px dotted green>Объект:</p>
     <input class="form-sender__input" type="text" name="OBJECT" placeholder="Колодец" value="">
     <p class="form-sender__title">Ширина:</p>
