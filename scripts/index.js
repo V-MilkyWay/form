@@ -9,6 +9,7 @@ let plusButton = post.querySelectorAll('.form-sender__plus-button');
 
 let i = 1;
 
+
 $(document).on("click", ".form-sender__switch_type_btn", function() {
 
     $(this).toggleClass('form-sender__switch_type_on');
@@ -31,8 +32,7 @@ $(document).on('off.switch', function() {
     console.log('Кнопка переключена в состояние off');
     out6 = "Нет"
 });
-let id;
-id = 1;
+
 $(document).on("click", ".form-sender__plus-button", function() {
     i = i + 1;
     formSender.insertAdjacentHTML('beforeend', `
@@ -55,10 +55,10 @@ $(document).on("click", ".form-sender__button", function() {
     }
 
 
-
     const fio = mails.slice(0, 1).map(el => `ФИО: ${el}`);
     const phone = mails.slice(1, 2).map(el => `Контактный телефон: ${el}`);
     const company = mails.slice(2, 3).map(el => `Название фирмы:  ${el}`);
+
 
     const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `Ширина: ${el} `);
     const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `Глубина: ${el}`);
