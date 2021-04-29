@@ -67,8 +67,9 @@ $(document).on("click", ".form-sender__button", function() {
     num = 0;
     let num1;
     num1 = 0;
-    const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `Ширина№${(num = num + 1)}: ${el} `);
-    const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `Глубина№${(num1 = num1 + 1)}: ${el}`);
+
+    const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `  Ширина№${(num = num + 1)}: ${el}  `);
+    const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `  Глубина№${(num1 = num1 + 1)}: ${el}  `);
 
     console.log(fio + " " + phone + " " + company + " " + width + " " + deep);
     alert(`
@@ -78,8 +79,11 @@ $(document).on("click", ".form-sender__button", function() {
     ${company}
 
     ---Информация о заказе---
+
     ${width}
+
     ${deep}
+    
     Наличие дна: ${out6}`);
     /*
                 let out = mails[0];
