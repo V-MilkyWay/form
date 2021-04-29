@@ -46,7 +46,12 @@ $(document).on("click", ".form-sender__plus-button", function() {
     <p class="form-sender__title">Наличие дна:</p>
     <div class="form-sender__switch_type_btn form-sender__switch_type_on"></div>`);
 });
+let p = 0;
 
+function plus(p) {
+    p = p + 1;
+    return p;
+}
 const mails = [];
 $(document).on("click", ".form-sender__button", function() {
     let formInput = formSender.querySelectorAll('.form-sender__input');
@@ -58,10 +63,12 @@ $(document).on("click", ".form-sender__button", function() {
     const fio = mails.slice(0, 1).map(el => `ФИО: ${el}`);
     const phone = mails.slice(1, 2).map(el => `Контактный телефон: ${el}`);
     const company = mails.slice(2, 3).map(el => `Название фирмы:  ${el}`);
-
-
-    const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `Ширина: ${el} `);
-    const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `Глубина: ${el}`);
+    let num;
+    num = 0;
+    let num1;
+    num1 = 0;
+    const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `Ширина№${(num = num + 1)}: ${el} `);
+    const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `Глубина№${(num1 = num1 + 1)}: ${el}`);
 
     console.log(fio + " " + phone + " " + company + " " + width + " " + deep);
     alert(`
