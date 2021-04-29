@@ -8,6 +8,12 @@ let formButton = post.querySelector('.form-sender__button');
 let plusButton = post.querySelectorAll('.form-sender__plus-button');
 
 let i = 1;
+let num = 0;
+let num1 = 0;
+const mails = [];
+const switchValue = [];
+let out6 = "Да";
+switchValue.push(` Наличие дна№1: ${out6}`);
 
 
 $(document).on("click", ".form-sender__switch_type_btn", function() {
@@ -22,16 +28,7 @@ $(document).on("click", ".form-sender__switch_type_btn", function() {
 
 $(document)
 
-let out6 = "Да";
 
-$(document).on('on.switch', function() {
-    console.log('Кнопка переключена в состояние on');
-    out6 = "Да"
-});
-$(document).on('off.switch', function() {
-    console.log('Кнопка переключена в состояние off');
-    out6 = "Нет"
-});
 
 $(document).on("click", ".form-sender__plus-button", function() {
     i = i + 1;
@@ -45,6 +42,8 @@ $(document).on("click", ".form-sender__plus-button", function() {
     <input class="form-sender__input" type="text" name="DEEP" placeholder="4321см" value="">
     <p class="form-sender__title">Наличие дна:</p>
     <div class="form-sender__switch_type_btn form-sender__switch_type_on"></div>`);
+
+    switchValue.push(` Наличие дна№${i}:  ${out6}`);
 });
 let p = 0;
 
@@ -52,21 +51,30 @@ function plus(p) {
     p = p + 1;
     return p;
 }
-const mails = [];
+
 $(document).on("click", ".form-sender__button", function() {
     let formInput = formSender.querySelectorAll('.form-sender__input');
+    let switchSum = formSender.querySelectorAll('.form-sender__switch_type_btn');
     for (elem of formInput) {
         mails.push(elem.value);
     }
 
 
+    $(document).on('on.switch', function() {
+        console.log('Кнопка переключена в состояние on');
+        out6 = "Да";
+        switchValue.splice(0, 1, out6);
+
+    });
+    $(document).on('off.switch', function() {
+        console.log('Кнопка переключена в состояние off');
+        out6 = "Нет"
+        switchValue.splice(0, 1, out6);
+    });
+
     const fio = mails.slice(0, 1).map(el => `ФИО: ${el}`);
     const phone = mails.slice(1, 2).map(el => `Контактный телефон: ${el}`);
     const company = mails.slice(2, 3).map(el => `Название фирмы:  ${el}`);
-    let num;
-    num = 0;
-    let num1;
-    num1 = 0;
 
     const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `  Ширина№${(num = num + 1)}: ${el}  `);
     const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `  Глубина№${(num1 = num1 + 1)}: ${el}  `);
@@ -83,8 +91,8 @@ $(document).on("click", ".form-sender__button", function() {
     ${width}
 
     ${deep}
-    
-    Наличие дна: ${out6}`);
+
+    ${switchValue}`);
     /*
                 let out = mails[0];
                 out2 = mails[1];
