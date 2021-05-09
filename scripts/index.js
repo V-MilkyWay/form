@@ -38,7 +38,7 @@ $(document).on('off.switch', function() {
     switchValue.splice(0, 1, ` Наличие дна-№1: ${out6}`);
 });
 
-
+//123gi
 $(document)
 
 $(document).on("click", ".form-sender__plus-button", function() {
@@ -92,24 +92,5 @@ $(document).on("click", ".form-sender__button", function() {
     ${deep}
 
     ${switchValue}`);
-    /*
-                let out = mails[0];
-                out2 = mails[1];
-                out3 = mails[2];
-                out4 = mails[3];
-                out5 = mails[4];
 
-                let result = [`
-                    Заказ №: ${i}
-                    ФИО: ${out}
-                    Контактный телефон: ${out2}
-                    Название фирмы: ${out3}
-
-                    ---Информация о заказе---
-                    Ширина: ${out4}
-                    Глубина: ${out5}
-                    Наличие дна: ${out6}`]
-
-                alert(result);
-*/
 });
