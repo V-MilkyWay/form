@@ -26,18 +26,6 @@ $(document).on("click", ".form-sender__switch_type_btn", function() {
     }
 });
 
-$(document).on('on.switch', function() {
-    console.log('Кнопка переключена в состояние on');
-    out6 = "Да";
-    switchValue.splice(0, 1, ` Наличие дна-№1: ${out6}`);
-
-});
-$(document).on('off.switch', function() {
-    console.log('Кнопка переключена в состояние off');
-    out6 = "Нет"
-    switchValue.splice(0, 1, ` Наличие дна-№1: ${out6}`);
-});
-
 //123gi
 $(document)
 
@@ -53,9 +41,22 @@ $(document).on("click", ".form-sender__plus-button", function() {
     <input class="form-sender__input" type="text" name="DEEP" placeholder="4321см" value="">
     <p class="form-sender__title">Наличие дна:</p>
     <div class="form-sender__switch_type_btn form-sender__switch_type_on"></div>`);
-
+    out6 = 'Да';
     switchValue.push(` Наличие дна-№${i}:  ${out6}`);
 });
+
+$(document).on('on.switch', function() {
+    console.log('Кнопка переключена в состояние on');
+    out6 = "Да";
+    switchValue.splice(-1, 1, ` Наличие дна-№${i}:  ${out6}`);
+
+});
+$(document).on('off.switch', function() {
+    console.log('Кнопка переключена в состояние off');
+    out6 = "Нет"
+    switchValue.splice(-1, 1, ` Наличие дна-№${i}:  ${out6}`);
+});
+
 let p = 0;
 
 function plus(p) {
