@@ -1,4 +1,5 @@
 .header {
+    position: relative;
     display: flex;
 }
 
@@ -7,11 +8,13 @@
         flex-flow: column;
         width: 380px;
         height: 100vh;
+        background: url(https://b-pi.ru/local/templates/yoo_aurora_bitrix/image/back.png);
     }
 }
 
 @media screen and (min-width: 320px) and (max-width: 1023px) {
     .header {
+        background: none;
         width: 320px;
         height: auto;
     }

@@ -9,12 +9,20 @@
     .header__logo {
         height: 86.2px;
         width: 200px;
+        background: url(https://b-pi.ru/local/templates/yoo_aurora_bitrix/image/BPI_logo_main.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }
 
 @media screen and (min-width: 320px) and (max-width: 1023px) {
     .header__logo {
+        background: url(https://b-pi.ru/local/templates/yoo_aurora_bitrix/image/BPI_logo_main_black.png);
         height: 35px;
         width: 81.9px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }

@@ -5,6 +5,9 @@
 @import url(../blocks/header/__esc/header__esc.css);
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/header/__phone/header__phone.css);
+@import url(../blocks/header/__menu/header__menu.css);
+@import url(../blocks/header/__menu/_text/header__menu_text.css);
+@import url(../blocks/backgroundMenu/backgroundMenu.css);
 @import url(../blocks/main/main.css);
 @import url(../blocks/main/__title/main__title.css);
 @import url(../blocks/post/post.css);
