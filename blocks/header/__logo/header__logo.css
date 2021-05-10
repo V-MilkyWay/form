@@ -1,0 +1,8 @@
+.header__logo {
+    display: flex;
+    align-self: center;
+    height: 35px;
+    width: 81.9px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}

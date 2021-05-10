@@ -1,0 +1,17 @@
+.header__esc {
+    display: flex;
+    align-self: center;
+    width: 25px;
+    height: 25px;
+    margin-left: 25px;
+    margin-right: 70px;
+    cursor: pointer;
+    background: url(../../../images/Обратно.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header__esc:hover {
+    opacity: 50%;
+}
