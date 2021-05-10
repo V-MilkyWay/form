@@ -4,7 +4,6 @@
     width: 25px;
     height: 25px;
     margin-left: 25px;
-    margin-right: 70px;
     cursor: pointer;
     background: url(../../../images/Обратно.png);
     background-size: contain;
@@ -14,4 +13,16 @@
 
 .header__esc:hover {
     opacity: 50%;
+}
+
+@media screen and (min-width: 1024px) {
+    .header__esc {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+    .header__esc {
+        margin-right: 70px;
+    }
 }

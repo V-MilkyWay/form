@@ -6,17 +6,15 @@
     grid-template-columns: 1 auto;
     grid-template-rows: auto;
     gap: 25px;
-    width: 880px;
 }
 
 @media screen and (min-width: 1024px) {
     .form-sender {
         width: 100%;
-        max-width: 880px;
     }
 }
 
-@media screen and (min-width: 320px) and (max-width: 1279px) {
+@media screen and (min-width: 320px) and (max-width: 1023px) {
     .form-sender {
         width: 242px;
     }

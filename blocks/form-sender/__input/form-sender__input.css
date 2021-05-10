@@ -10,3 +10,9 @@
     text-align: left;
     border-bottom: 2px solid rgb(82, 144, 216);
 }
+
+@media screen and (min-width: 1024px) {
+    .form-sender__input {
+        width: 500px;
+    }
+}

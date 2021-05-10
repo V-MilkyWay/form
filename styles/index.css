@@ -7,6 +7,7 @@
 @import url(../blocks/main/main.css);
 @import url(../blocks/main/__title/main__title.css);
 @import url(../blocks/post/post.css);
+@import url(../blocks/post/__textarea/post__textarea.css);
 @import url(../blocks/form-sender/form-sender.css);
 @import url(../blocks/form-sender/__title/form-sender__title.css);
 @import url(../blocks/form-sender/__input/form-sender__input.css);
