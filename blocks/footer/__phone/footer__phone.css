@@ -13,6 +13,6 @@
     margin-bottom: 15px;
 }
 
-.footer__phoner {
+.footer__phoner:hover {
     opacity: 50%;
 }

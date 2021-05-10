@@ -2,4 +2,9 @@
     color: white;
     text-decoration: none;
     margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.header__menu_text:hover {
+    opacity: 50%;
 }
