@@ -89,7 +89,7 @@ $(document).on("click", ".form-sender__button", function() {
 
     console.log(fio + " " + phone + " " + company + " " + width + " " + deep);
     alert(`
-    Заказ №: ${i}
+    Заказ:
     ${fio}
     ${ phone}
     ${company}
