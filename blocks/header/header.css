@@ -7,7 +7,7 @@
     .header {
         flex-flow: column;
         width: 380px;
-        height: 100vh;
+        height: 110vh;
         background: url(https://b-pi.ru/local/templates/yoo_aurora_bitrix/image/back.png);
     }
 }
