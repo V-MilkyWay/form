@@ -15,3 +15,6 @@
 @import url(../blocks/form-sender/__switch/_type/form-sender__switch_type_on.css);
 @import url(../blocks/form-sender/__button/form-sender__button.css);
 @import url(../blocks/form-sender/__plus-button/form-sender__plus-button.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__phone/footer__phone.css);
+@import url(../blocks/footer/__text/footer__text.css);

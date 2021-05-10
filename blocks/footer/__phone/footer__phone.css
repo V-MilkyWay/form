@@ -1,0 +1,18 @@
+.footer__phone {
+    display: flex;
+    align-self: center;
+    width: 15px;
+    height: 15px;
+    margin-left: 80px;
+    margin-right: 5px;
+    cursor: pointer;
+    background: url(../../../images/Телефон.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+}
+
+.footer__phoner {
+    opacity: 50%;
+}
