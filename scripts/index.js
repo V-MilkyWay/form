@@ -66,7 +66,9 @@ function plus(p) {
 
 $(document).on("click", ".form-sender__button", function() {
     let formInput = formSender.querySelectorAll('.form-sender__input');
-    let switchSum = formSender.querySelectorAll('.form-sender__switch_type_btn');
+    let formTextarea = post.querySelector('.post__textarea');
+    let textArea = formTextarea.value;
+
     for (elem of formInput) {
         mails.push(elem.value);
     }
@@ -92,6 +94,9 @@ $(document).on("click", ".form-sender__button", function() {
 
     ${deep}
 
-    ${switchValue}`);
+    ${switchValue}
+    
+    ---Примечание---
+    ${textArea}`);
 
 });
