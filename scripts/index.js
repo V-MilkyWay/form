@@ -82,14 +82,14 @@ $(document).on("click", ".form-sender__button", function() {
     const fio = mails.slice(0, 1).map(el => `ФИО: ${el}`);
     const phone = mails.slice(1, 2).map(el => `Контактный телефон: ${el}`);
     const company = mails.slice(2, 3).map(el => `Название фирмы:  ${el}`);
-    const bottom = mailsBottom.map(el => `  Наличие дна-№${(num2 = num2 + 1)}: ${el}  `);
+    const bottom = mailsBottom.map(el => `  Тип-№${(num2 = num2 + 1)}: ${el}  `);
 
     const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `  Диаметр-№${(num = num + 1)}: ${el} `);
     const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `  Глубина-№${(num1 = num1 + 1)}: ${el} `);
 
     console.log(fio + " " + phone + " " + company + " " + width + " " + deep);
     alert(`
-    Количество заказов: ${i}
+    Количество колодцев: ${i}
     ${fio}
     ${ phone}
     ${company}
