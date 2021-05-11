@@ -41,8 +41,8 @@ $(document).on("click", ".form-sender__plus-button", function() {
     <input class="form-sender__input" type="text" name="WIDTH" placeholder="1000см" value="">
     <p class="form-sender__title">Глубина:</p>
     <input class="form-sender__input" type="text" name="DEEP" placeholder="4321см" value="">
-    <p class="form-sender__title">Наличие дна:</p>
-    <input class="form-sender__input_bottom" type="text" name="BOTTOM" placeholder="Да/Нет" value="">`);
+    <p class="form-sender__title">ДК/ПН:</p>
+                <input class="form-sender__input_bottom" type="text" name="BOTTOM" placeholder="ДК/ПН" value="">`);
 });
 
 $(document).on('on.switch', function() {
