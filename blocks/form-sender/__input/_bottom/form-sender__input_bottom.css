@@ -10,6 +10,10 @@
     border-bottom: 2px solid rgb(82, 144, 216);
 }
 
+.form-sender__input_bottom:invalid {
+    border-bottom: 2px solid red;
+}
+
 @media screen and (min-width: 1024px) {
     .form-sender__input_bottom {
         width: 500px;

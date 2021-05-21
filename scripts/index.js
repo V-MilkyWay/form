@@ -35,27 +35,15 @@ $(document).on("click", ".form-sender__plus-button", function() {
     i = i + 1;
     formSender.insertAdjacentHTML('beforeend', `
     <h2 class="form-sender__title" style="text-align: center;margin-top: 25px; text-decoration: underline;">Колодец №:${i}</h2>
-    <p class="form-sender__title">Ширина:</p>
-    <input id="WIDTH-input" class="form-sender__input" type="text" name="WIDTH" placeholder="1000(см)" value="" required minlength="2">
+    <p class="form-sender__title">Диаметр(см):</p>
+    <input id="WIDTH-input" class="form-sender__input" type="text" name="WIDTH" placeholder="1000" value="" required minlength="3" maxlength="10" pattern="[ 0-9]+$">
     <span class="form-sender__input-error WIDTH-input-error"></span>
     <p class="form-sender__title">Глубина(см):</p>
-    <input id="DEEP-input" class="form-sender__input" type="text" name="DEEP" placeholder="4321(см)" value="" required minlength="2">
+    <input id="DEEP-input" class="form-sender__input" type="text" name="DEEP" placeholder="4321" value="" required minlength="3" maxlength="10" pattern="[ 0-9]+$">
     <span class="form-sender__input-error DEEP-input-error"></span>
     <p class="form-sender__title">ДК/ПН:</p>
-    <input id="BOTTOM-input" class="form-sender__input form-sender__input_bottom" type="text" name="BOTTOM" placeholder="ДК/ПН" value="" required minlength="4">
+    <input id="BOTTOM-input" class="form-sender__input_bottom" type="text" name="BOTTOM" placeholder="ДК/ПН" value="" required minlength="2">
     <span class="form-sender__input-error BOTTOM-input-error"></span>`);
-});
-
-$(document).on('on.switch', function() {
-    console.log('Кнопка переключена в состояние on');
-    out6 = "Да";
-    switchValue.splice(-1, 1, ` Наличие дна-№${i}:  ${out6}`);
-
-});
-$(document).on('off.switch', function() {
-    console.log('Кнопка переключена в состояние off');
-    out6 = "Нет"
-    switchValue.splice(-1, 1, ` Наличие дна-№${i}:  ${out6}`);
 });
 
 let p = 0;
@@ -84,6 +72,7 @@ $(document).on("click", ".form-sender__button", function() {
     const phone = mails.slice(1, 2).map(el => `Контактный телефон: ${el}`);
     const company = mails.slice(2, 3).map(el => `Название фирмы:  ${el}`);
     const bottom = mailsBottom.map(el => `  Тип-№${(num2 = num2 + 1)}: ${el}  `);
+
 
     const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `  Диаметр-№${(num = num + 1)}: ${el} `);
     const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `  Глубина-№${(num1 = num1 + 1)}: ${el} `);
