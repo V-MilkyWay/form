@@ -95,4 +95,10 @@ $(document).on("click", ".form-sender__button", function() {
     ---Примечание---
     ${textArea}`);
 
+    resetForm(formSender);
+    window.location.reload();
 });
+
+function resetForm(nameForm) {
+    nameForm.reset();
+}
