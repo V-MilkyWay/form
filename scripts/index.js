@@ -34,15 +34,16 @@ $(document)
 $(document).on("click", ".form-sender__plus-button", function() {
     i = i + 1;
     formSender.insertAdjacentHTML('beforeend', `
-    <h2 class="form-sender__title" style="text-align: center; margin-bottom: -40px; text-decoration: underline;">Колодец №:${i}</h2>
-    <p class="form-sender__title" style="padding-top: 10px; border-top: 1px dotted green>Объект:</p>
-    <input class="form-sender__input" type="text" name="OBJECT" placeholder="Колодец" value="" required>
+    <h2 class="form-sender__title" style="text-align: center;margin-top: 25px; text-decoration: underline;">Колодец №:${i}</h2>
     <p class="form-sender__title">Ширина:</p>
-    <input class="form-sender__input" type="text" name="WIDTH" placeholder="1000см" value="" required>
-    <p class="form-sender__title">Глубина:</p>
-    <input class="form-sender__input" type="text" name="DEEP" placeholder="4321см" value="" required>
+    <input id="WIDTH-input" class="form-sender__input" type="text" name="WIDTH" placeholder="1000(см)" value="" required minlength="2">
+    <span class="form-sender__input-error WIDTH-input-error"></span>
+    <p class="form-sender__title">Глубина(см):</p>
+    <input id="DEEP-input" class="form-sender__input" type="text" name="DEEP" placeholder="4321(см)" value="" required minlength="2">
+    <span class="form-sender__input-error DEEP-input-error"></span>
     <p class="form-sender__title">ДК/ПН:</p>
-    <input class="form-sender__input_bottom" type="text" name="BOTTOM" placeholder="ДК" value="" required>`);
+    <input id="BOTTOM-input" class="form-sender__input form-sender__input_bottom" type="text" name="BOTTOM" placeholder="ДК/ПН" value="" required minlength="4">
+    <span class="form-sender__input-error BOTTOM-input-error"></span>`);
 });
 
 $(document).on('on.switch', function() {

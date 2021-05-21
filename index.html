@@ -29,18 +29,23 @@
             <h1 class="main__title">Заказ</h1>
             <form class="form-sender" novalidate>
                 <p class="form-sender__title">Имя:</p>
-                <input class="form-sender__input" type="text" name="NAME" placeholder="Иванов И.И." value="" required minlength="2">
-                <span class="form__input-error email-input-error"></span>
+                <input id="NAME-input" class="form-sender__input" type="text" name="NAME" placeholder="Иванов И.И." value="" required minlength="2">
+                <span class="form-sender__input-error NAME-input-error"></span>
                 <p class="form-sender__title">Телефон:</p>
-                <input class="form-sender__input" type="text" name="PHONE" placeholder="+7-999-123-456" value="">
+                <input id="PHONE-input" class="form-sender__input" type="text" name="PHONE" placeholder="+7-999-123-456" value="" required minlength="2">
+                <span class="form-sender__input-error PHONE-input-error"></span>
                 <p class="form-sender__title">Фирма:</p>
-                <input class="form-sender__input" type="text" name="COMPANY" placeholder="Название Фирмы" value="">
+                <input id="COMPANY-input" class="form-sender__input" type="text" name="COMPANY" placeholder="Название Фирмы" value="" required minlength="2">
+                <span class="form-sender__input-error COMPANY-input-error"></span>
                 <p class="form-sender__title">Диаметр(см):</p>
-                <input class="form-sender__input" type="text" name="WIDTH" placeholder="1000(см)" value="">
+                <input id="WIDTH-input" class="form-sender__input" type="text" name="WIDTH" placeholder="1000(см)" value="" required minlength="2">
+                <span class="form-sender__input-error WIDTH-input-error"></span>
                 <p class="form-sender__title">Глубина(см):</p>
-                <input class="form-sender__input" type="text" name="DEEP" placeholder="4321(см)" value="">
+                <input id="DEEP-input" class="form-sender__input" type="text" name="DEEP" placeholder="4321(см)" value="" required minlength="2">
+                <span class="form-sender__input-error DEEP-input-error"></span>
                 <p class="form-sender__title">ДК/ПН:</p>
-                <input class="form-sender__input_bottom" type="text" name="BOTTOM" placeholder="ДК/ПН" value="">
+                <input id="BOTTOM-input" class="form-sender__input form-sender__input_bottom" type="text" name="BOTTOM" placeholder="ДК/ПН" value="" required minlength="4">
+                <span class="form-sender__input-error BOTTOM-input-error"></span>
             </form>
             <div class="post">
                 <p class="form-sender__title">Добавить колодец</p>

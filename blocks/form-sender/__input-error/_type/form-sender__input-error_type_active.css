@@ -1,0 +1,18 @@
+.form-sender__input-error_type_active {
+    display: flex;
+    margin: 0;
+    color: #FF0000;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 2px;
+    height: 15px;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+    .form-sender__input-error_type_active {
+        width: 500px;
+    }
+}
