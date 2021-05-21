@@ -22,15 +22,15 @@ const checkInputValidity = (classesList, formElement, inputElement) => {
 
 const setEventListeners = (classesList, formElement) => {
     const inputList = Array.from(formElement.querySelectorAll(classesList.inputSelector));
-    const buttonElement = formElement.querySelector(classesList.submitButtonSelector);
+    //let formButton = post.querySelector('.form-sender__button');
 
-    // toggleButtonState(classesList, inputList, buttonElement);
+    toggleButtonState(classesList, inputList, formButton);
 
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', function() {
             checkInputValidity(classesList, formElement, inputElement);
 
-            // toggleButtonState(classesList, inputList, buttonElement);
+            toggleButtonState(classesList, inputList, formButton);
         });
     });
 };
@@ -46,26 +46,26 @@ const enableValidation = (classesList) => {
 }
 
 const hasInvalidInput = (inputList) => {
-        return inputList.some((inputElement) => {
-            return !inputElement.validity.valid;
-        });
+    return inputList.some((inputElement) => {
+        return !inputElement.validity.valid;
+    });
+}
+
+const toggleButtonState = (classesList, inputList, formButton) => {
+    if (hasInvalidInput(inputList)) {
+        formButton.classList.add(classesList.inactiveButtonClass);
+        formButton.disabled = true;
+    } else {
+        formButton.classList.remove(classesList.inactiveButtonClass);
+        formButton.disabled = false;
     }
-    /*
-    const toggleButtonState = (classesList, inputList, buttonElement) => {
-        if (hasInvalidInput(inputList)) {
-            buttonElement.classList.add(classesList.inactiveButtonClass);
-            buttonElement.disabled = true;
-        } else {
-            buttonElement.classList.remove(classesList.inactiveButtonClass);
-            buttonElement.disabled = false;
-        }
-    };
-    */
+};
+
 enableValidation({
     formSelector: '.form-sender',
     inputSelector: '.form-sender__input',
     submitButtonSelector: '.form-sender__button',
-    //inactiveButtonClass: 'form-sender__button_inactive',
+    inactiveButtonClass: 'form-sender__button_inactive',
     inputErrorClass: 'form-sender__input-error',
     errorClass: 'form-sender__input-error_type_active'
 });

@@ -20,6 +20,7 @@
 @import url(../blocks/form-sender/__switch/_type/form-sender__switch_type_btn.css);
 @import url(../blocks/form-sender/__switch/_type/form-sender__switch_type_on.css);
 @import url(../blocks/form-sender/__button/form-sender__button.css);
+@import url(../blocks/form-sender/__button/form-sender__button_inactive.css);
 @import url(../blocks/form-sender/__plus-button/form-sender__plus-button.css);
 @import url(../blocks/form-sender/__input-error/form-sender__input-error.css);
 @import url(../blocks/form-sender/__input-error/_type/form-sender__input-error_type_active.css);
