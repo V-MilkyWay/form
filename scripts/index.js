@@ -44,21 +44,22 @@ $(document).on("click", ".form-sender__switch_type_btn", function() {
 
 //123gi
 $(document)
+    /*
+    $(document).on("click", ".form-sender__plus-button", function() {
+        i = i + 1;
+        formSender.insertAdjacentHTML('beforeend', `
+        <h2 class="form-sender__title" style="text-align: center;margin-top: 25px; text-decoration: underline;">Колодец №:${i}</h2>
+        <p class="form-sender__title">Диаметр(см):</p>
+        <input id="WIDTH-input" class="form-sender__input" type="text" name="WIDTH" placeholder="1000" value="" required minlength="3" maxlength="10" pattern="[ 0-9]+$">
+        <span class="form-sender__input-error WIDTH-input-error"></span>
+        <p class="form-sender__title">Глубина(см):</p>
+        <input id="DEEP-input" class="form-sender__input" type="text" name="DEEP" placeholder="4321" value="" required minlength="3" maxlength="10" pattern="[ 0-9]+$">
+        <span class="form-sender__input-error DEEP-input-error"></span>
+        <p class="form-sender__title">ДК/ПН:</p>
+        <input id="BOTTOM-input" class="form-sender__input_bottom" type="text" name="BOTTOM" placeholder="ДК/ПН" value="" required minlength="2">
+        <span class="form-sender__input-error BOTTOM-input-error"></span>`);
 
-$(document).on("click", ".form-sender__plus-button", function() {
-    i = i + 1;
-    formSender.insertAdjacentHTML('beforeend', `
-    <h2 class="form-sender__title" style="text-align: center;margin-top: 25px; text-decoration: underline;">Колодец №:${i}</h2>
-    <p class="form-sender__title">Диаметр(см):</p>
-    <input id="WIDTH-input" class="form-sender__input" type="text" name="WIDTH" placeholder="1000" value="" required minlength="3" maxlength="10" pattern="[ 0-9]+$">
-    <span class="form-sender__input-error WIDTH-input-error"></span>
-    <p class="form-sender__title">Глубина(см):</p>
-    <input id="DEEP-input" class="form-sender__input" type="text" name="DEEP" placeholder="4321" value="" required minlength="3" maxlength="10" pattern="[ 0-9]+$">
-    <span class="form-sender__input-error DEEP-input-error"></span>
-    <p class="form-sender__title">ДК/ПН:</p>
-    <input id="BOTTOM-input" class="form-sender__input_bottom" type="text" name="BOTTOM" placeholder="ДК/ПН" value="" required minlength="2">
-    <span class="form-sender__input-error BOTTOM-input-error"></span>`);
-});
+    }); */
 
 let p = 0;
 
@@ -91,6 +92,8 @@ $(document).on("click", ".form-sender__button", function() {
     const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `  Диаметр-№${(num = num + 1)}: ${el} `);
     const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `  Глубина-№${(num1 = num1 + 1)}: ${el} `);
 
+    resetForm(formSender);
+    openPopup(popupEditProfile);
     alert(`
     Количество колодцев: ${i}
     ${fio}
@@ -108,8 +111,6 @@ $(document).on("click", ".form-sender__button", function() {
     ---Примечание---
     ${textArea}`);
 
-    resetForm(formSender);
-    openPopup(popupEditProfile);
 });
 
 closeEditProfilePopupBtn.addEventListener('click', function() {
