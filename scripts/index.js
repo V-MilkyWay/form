@@ -3,6 +3,11 @@ let main = document.querySelector('.main');
 let formSender = main.querySelector('.form-sender');
 let post = main.querySelector('.post');
 
+const popupEditProfile = page.querySelector('.popup_type_redact');
+const redactContainer = popupEditProfile.querySelector('.popup__container');
+const formEditProfile = redactContainer.querySelector('.form');
+const closeEditProfilePopupBtn = redactContainer.querySelector('.popup__close-button');
+
 let formButton = post.querySelector('.form-sender__button');
 
 let plusButton = post.querySelectorAll('.form-sender__plus-button');
@@ -16,6 +21,15 @@ const mailsBottom = [];
 const switchValue = [];
 let out6 = "Да";
 switchValue.push(` Наличие дна-№1: ${out6}`);
+
+function openPopup(popup) {
+    popup.classList.add('popup_opened');
+};
+
+function closePopup(popup) {
+    popup.classList.remove('popup_opened');
+};
+
 
 
 $(document).on("click", ".form-sender__switch_type_btn", function() {
@@ -77,7 +91,6 @@ $(document).on("click", ".form-sender__button", function() {
     const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `  Диаметр-№${(num = num + 1)}: ${el} `);
     const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `  Глубина-№${(num1 = num1 + 1)}: ${el} `);
 
-    console.log(fio + " " + phone + " " + company + " " + width + " " + deep);
     alert(`
     Количество колодцев: ${i}
     ${fio}
@@ -96,9 +109,23 @@ $(document).on("click", ".form-sender__button", function() {
     ${textArea}`);
 
     resetForm(formSender);
+    openPopup(popupEditProfile);
+});
+
+closeEditProfilePopupBtn.addEventListener('click', function() {
+    closePopup(popupEditProfile);
     window.location.reload();
 });
 
 function resetForm(nameForm) {
     nameForm.reset();
 }
+
+function formEditProfileSubmitHandler(evt) {
+    evt.preventDefault();
+    closePopup(popupEditProfile);
+    window.location.reload();
+    location.href = "https://b-pi.ru/";
+};
+
+formEditProfile.addEventListener('submit', formEditProfileSubmitHandler);
