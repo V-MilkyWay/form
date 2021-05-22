@@ -20,6 +20,7 @@
 @import url(../blocks/main/__title/main__title.css);
 @import url(../blocks/post/post.css);
 @import url(../blocks/post/__textarea/post__textarea.css);
+@import url(../blocks/bottons/bottons.css);
 @import url(../blocks/form-sender/form-sender.css);
 @import url(../blocks/form-sender/__title/form-sender__title.css);
 @import url(../blocks/form-sender/__input/form-sender__input.css);
@@ -28,6 +29,7 @@
 @import url(../blocks/form-sender/__switch/_type/form-sender__switch_type_btn.css);
 @import url(../blocks/form-sender/__switch/_type/form-sender__switch_type_on.css);
 @import url(../blocks/form-sender/__button/form-sender__button.css);
+@import url(../blocks/form-sender/__button/form-sender__button_reset.css);
 @import url(../blocks/form-sender/__button/form-sender__button_inactive.css);
 @import url(../blocks/form-sender/__plus-button/form-sender__plus-button.css);
 @import url(../blocks/form-sender/__input-error/form-sender__input-error.css);
