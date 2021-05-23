@@ -75,14 +75,6 @@ $(document).on("click", ".form-sender__button", function() {
 
             resetForm(formSender);
             openPopup(popupEditProfile);
-            $.ajax({
-                type: "POST",
-                url: "wdh_send_form.php",
-                data: $("#wdh_form").serialize(),
-                success: function(data) {
-                    $("#wdh_result_form").html(data);
-                }
-            });
             alert(`
     Количество колодцев: ${i}
     ${fio}
