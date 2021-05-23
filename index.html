@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/index.css">
     <title>Форма заказа</title>
     <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -36,7 +37,7 @@
         </header>
         <main class="main">
             <h1 class="main__title">Заказ</h1>
-            <form class="form-sender" novalidate>
+            <form id="wdh_form" class="form-sender" novalidate>
                 <p class="form-sender__title">Имя:</p>
                 <input id="NAME-input" class="form-sender__input" type="text" name="NAME" placeholder="Иванов И.И." value="" required minlength="2" maxlength="30">
                 <span class="form-sender__input-error NAME-input-error"></span>
@@ -62,9 +63,10 @@
                 <p class="form-sender__title" style="align-self: start;">Примечание:</p>
                 <textarea type="textarea" class="post__textarea" placeholder="Введите текст..." value=" " name="primechanie"></textarea>
                 <div class="buttons">
-                    <button type="button" class="form-sender__button">Отправить</button>
+                    <button type="sumbit" class="form-sender__button">Отправить</button>
                     <button type="button" class="form-sender__button_reset">Cбросить</button>
                 </div>
+                <div id="wdh_result_form"></div>
                 <div class="footer">
                     <a href="tel:+7 812 676-555-1" class="footer__phone"></a>
                     <a href="tel:+7 812 676-555-1" class="footer__text">+7 812 676-55-51</a>
