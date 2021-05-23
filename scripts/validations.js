@@ -88,12 +88,7 @@ $(document).on("click", ".form-sender__plus-button", function() {
     <p class="form-sender__title">ДК/ПН:</p>
     <input id="BOTTOM-input" class="form-sender__input_bottom" type="text" name="BOTTOM" placeholder="ДК/ПН" value="" required minlength="2">
     <span class="form-sender__input-error BOTTOM-input-error"></span>`);
-    const showInputError = (classesList, formElement, inputElement, errorMessage) => {
-        const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-        inputElement.classList.add(classesList.inputErrorClass);
-        errorElement.textContent = errorMessage;
-        errorElement.classList.add(classesList.errorClass);
-    };
+
 
     const hideInputError = (classesList, formElement, inputElement) => {
         const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -104,7 +99,7 @@ $(document).on("click", ".form-sender__plus-button", function() {
 
     const checkInputValidity = (classesList, formElement, inputElement) => {
         if (!inputElement.validity.valid) {
-            showInputError(classesList, formElement, inputElement, inputElement.validationMessage);
+            // showInputError(classesList, formElement, inputElement, inputElement.validationMessage);
         } else {
             hideInputError(classesList, formElement, inputElement);
         }
