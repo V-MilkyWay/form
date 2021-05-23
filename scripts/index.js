@@ -77,6 +77,8 @@ $(document).on("click", ".form-sender__button", function() {
     const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `  Диаметр-№${(num = num + 1)}: ${el} `);
     const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `  Глубина-№${(num1 = num1 + 1)}: ${el} `);
 
+
+
     resetForm(formSender);
     openPopup(popupEditProfile);
     alert(`
@@ -98,6 +100,9 @@ $(document).on("click", ".form-sender__button", function() {
 
 });
 
+////////////
+
+////////////
 closeEditProfilePopupBtn.addEventListener('click', function() {
     closePopup(popupEditProfile);
     window.location.reload();
