@@ -75,7 +75,31 @@ $(document).on("click", ".form-sender__button", function() {
 
             resetForm(formSender);
             openPopup(popupEditProfile);
-            alert(`
+            let resultAll = `
+            Количество колодцев: ${i}
+            ${fio}
+            ${ phone}
+            ${company}
+            ---Информация о заказе---
+            ${result.join(`
+            -------------------------`)}
+            ---Примечание---
+            ${textArea}`
+
+            //post
+            $.ajax({
+                url: "./../post.php",
+                type: "POST",
+                data: {resultAll},
+                success: function(response) {
+                    console.log('Ok')
+                },
+                error: function(response) {
+                    //обработка ошибок при отправке
+                }
+            });
+
+        /*    alert(`
     Количество колодцев: ${i}
     ${fio}
     ${ phone}
@@ -84,7 +108,8 @@ $(document).on("click", ".form-sender__button", function() {
     ${result.join(`
     -------------------------`)}
     ---Примечание---
-    ${textArea}`)
+    ${textArea}`)*/
+
 });
 
 ////////////

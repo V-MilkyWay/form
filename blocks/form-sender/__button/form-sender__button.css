@@ -24,3 +24,15 @@
 .form-sender__button:hover {
     opacity: 0.8;
 }
+
+@media screen and (min-width: 1024px) {
+    .form-sender__button {
+        width: 242px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+    .form-sender__button {
+        width: 121px;
+    }
+}
