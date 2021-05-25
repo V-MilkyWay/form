@@ -44,41 +44,43 @@ function plus(p) {
 }
 
 $(document).on("click", ".form-sender__button", function() {
-            let formInput = formSender.querySelectorAll('.form-sender__input');
-            let formTextarea = post.querySelector('.post__textarea');
-            let textArea = formTextarea.value;
-            let formInputBottom = formSender.querySelectorAll('.form-sender__input_bottom');
 
-            for (elem of formInput) {
-                mails.push(elem.value);
-            }
-
-            for (elem of formInputBottom) {
-                mailsBottom.push(elem.value);
-            }
+            grecaptcha.ready(function() {
+                        grecaptcha.execute('6Lc_sO4aAAAAAD3EhWNAxiJdsoMr8FiQVKUDBeQG', { action: 'submit' }).then(function(token) {
 
 
-            const fio = mails.slice(0, 1).map(el => `ФИО: ${el}`);
-            const phone = mails.slice(1, 2).map(el => `Контактный телефон: ${el}`);
-            const company = mails.slice(2, 3).map(el => `Название фирмы:  ${el}`);
-            const bottom = mailsBottom.map(el => `
+                                    let formInput = formSender.querySelectorAll('.form-sender__input');
+                                    let formTextarea = post.querySelector('.post__textarea');
+                                    let textArea = formTextarea.value;
+                                    let formInputBottom = formSender.querySelectorAll('.form-sender__input_bottom');
+
+                                    for (elem of formInput) {
+                                        mails.push(elem.value);
+                                    }
+
+                                    for (elem of formInputBottom) {
+                                        mailsBottom.push(elem.value);
+                                    }
+
+
+                                    const fio = mails.slice(0, 1).map(el => `ФИО: ${el}`);
+                                    const phone = mails.slice(1, 2).map(el => `Контактный телефон: ${el}`);
+                                    const company = mails.slice(2, 3).map(el => `Название фирмы:  ${el}`);
+                                    const bottom = mailsBottom.map(el => `
     Тип: ${el}  `);
 
 
-            const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `
+                                    const width = mails.filter(function(v, i) { if ((i % 2 != 0) && (i > 2)) return v; }).map(el => `
     Заказ-№${(num2 = num2 + 1)}
     Диаметр: ${el} `);
-            const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `
+                                    const deep = mails.filter(function(v, i) { if ((i % 2 === 0) && (i > 3)) return v; }).map(el => `
     Глубина: ${el} `);
 
 
 
-            let result = width.map((elem, index) => `${elem}, ${deep[index]}, ${bottom[index]} `);
+                                    let result = width.map((elem, index) => `${elem}, ${deep[index]}, ${bottom[index]} `);
 
-            resetForm(formSender);
-            textArea.value = "";
-            openPopup(popupEditProfile);
-            let resultAll = `
+                                    let resultAll = `
     ${fio}
     ${ phone}
     ${company}
@@ -103,17 +105,11 @@ $(document).on("click", ".form-sender__button", function() {
                 }
             });
 
-        /*    alert(`
-    Количество колодцев: ${i}
-    ${fio}
-    ${ phone}
-    ${company}
-    ---Информация о заказе---
-    ${result.join(`
-    -------------------------`)}
-    ---Примечание---
-    ${textArea}`)*/
-
+            resetForm(formSender);
+            formTextarea.value = "";
+            openPopup(popupEditProfile);
+        });
+    });
 });
 
 ////////////
