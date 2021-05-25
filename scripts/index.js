@@ -8,6 +8,8 @@ const redactContainer = popupEditProfile.querySelector('.popup__container');
 const formEditProfile = redactContainer.querySelector('.form');
 const closeEditProfilePopupBtn = redactContainer.querySelector('.popup__close-button');
 
+const textArea = post.querySelector('.post__textarea');
+
 let formButton = post.querySelector('.form-sender__button');
 
 let plusButton = post.querySelectorAll('.form-sender__plus-button');
@@ -74,23 +76,25 @@ $(document).on("click", ".form-sender__button", function() {
             let result = width.map((elem, index) => `${elem}, ${deep[index]}, ${bottom[index]} `);
 
             resetForm(formSender);
+            textArea.value = "";
             openPopup(popupEditProfile);
             let resultAll = `
-            Количество колодцев: ${i}
-            ${fio}
-            ${ phone}
-            ${company}
-            ---Информация о заказе---
-            ${result.join(`
-            -------------------------`)}
-            ---Примечание---
-            ${textArea}`
+    ${fio}
+    ${ phone}
+    ${company}
+
+    ---Информация о заказе---
+    ${result.join(`
+    -------------------------`)}
+    
+    ---Примечание---
+    ${textArea}`
 
             //post
             $.ajax({
-                url: "./../post.php",
+                url: "./post.php",
                 type: "POST",
-                data: {resultAll},
+                data: {"resultAll": resultAll},
                 success: function(response) {
                     console.log('Ok')
                 },
@@ -135,5 +139,6 @@ formEditProfile.addEventListener('submit', formEditProfileSubmitHandler);
 
 $(document).on("click", ".form-sender__button_reset", function() {
     resetForm(formSender);
+    textArea.value = "";
     window.location.reload();
 });
